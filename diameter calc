@@ -1,0 +1,23 @@
+import math
+
+def calculate_penstock_diameter(head, flow_rate):
+  
+    g = 9.81  # Acceleration due to gravity (m/s^2)
+    roughness = 0.0001  # Typical roughness for steel pipes (meters)
+    
+   
+    diameter = math.sqrt((4 * flow_rate) / (math.pi * head * g))  # Diameter in meters
+    
+ 
+    adjusted_diameter = diameter / (1 - (2.51 * roughness / diameter))
+    
+    return adjusted_diameter
+
+# Input the head (in meters) and flow rate (in cubic meters per second)
+head = float(input("Enter the head (meters): "))
+flow_rate = float(input("Enter the flow rate (cubic meters per second): "))
+
+# Calculate the penstock diameter
+penstock_diameter = calculate_penstock_diameter(head, flow_rate)
+
+print(f"The required penstock diameter is {penstock_diameter:.2f} meters.")
