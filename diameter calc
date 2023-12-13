@@ -3,6 +3,7 @@ import math
 def calculate_penstock_diameter(head, flow_rate):
   
     g = 9.81  # Acceleration due to gravity (m/s^2)
+    len = 30.4 # length of penstock is 30.4 m
     roughness = 0.0001  # Typical roughness for steel pipes (meters)
     
    
