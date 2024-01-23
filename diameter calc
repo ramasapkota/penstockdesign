@@ -8,6 +8,7 @@ def calculate_penstock_diameter(head, flow_rate):
     
    
     diameter = math.sqrt((4 * flow_rate) / (math.pi * head * g))  # Diameter in meters
+    circum = 2*pi*diameter
     
  
     adjusted_diameter = diameter / (1 - (2.51 * roughness / diameter))
@@ -22,3 +23,4 @@ flow_rate = float(input("Enter the flow rate (cubic meters per second): "))
 penstock_diameter = calculate_penstock_diameter(head, flow_rate)
 
 print(f"The required penstock diameter is {penstock_diameter:.2f} meters.")
+print(f"The required penstock circumference is {penstock_diameter:.2f} meters.")
